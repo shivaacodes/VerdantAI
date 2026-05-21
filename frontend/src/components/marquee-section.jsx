@@ -16,29 +16,28 @@ export default function MarqueeSection() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-green-50">
-      <div className="container mx-auto mb-8 text-center">
-        <h2 className="text-5xl font-bold text-black">
-          Trusted by Leading Agricultural Organizations
+    <section className="py-16 bg-[#07090e] border-b border-white/5 overflow-hidden">
+      <div className="container mx-auto mb-10 text-center px-6">
+        <h2 className="text-3xl font-extrabold text-white font-urbanist">
+          Trusted by Innovative Botanical Experts
         </h2>
-        <p className="text-xl text-black mt-4">
-          Join thousands of farmers and researchers monitoring plant health with{" "}
-          <span className="font-semibold">ChloroMap</span>.
+        <p className="text-sm text-gray-400 mt-2 max-w-xl mx-auto font-urbanist">
+          Integrating next-gen spectral mapping across crop research labs and home growers.
         </p>
       </div>
 
-      <Marquee className="py-6" pauseOnHover speed={30}>
+      <Marquee className="py-2" pauseOnHover speed={25}>
         {brands.map((brand) => (
           <div
             key={brand.name}
-            className="mx-6 flex items-center gap-4 px-6 py-4 bg-white border border-green-400 shadow-lg rounded-xl transition hover:scale-105"
+            className="mx-4 flex items-center gap-3 px-5 py-3.5 bg-gray-900/40 border border-white/5 hover:border-emerald-500/20 shadow-xl rounded-2xl transition-all duration-300 transform hover:scale-102"
           >
-            <Avatar className="w-12 h-12 bg-green-600 text-white">
-              <AvatarFallback className="text-black">
+            <Avatar className="w-10 h-10 bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 flex-shrink-0">
+              <AvatarFallback className="text-emerald-400 font-bold text-xs bg-emerald-500/10">
                 {brand.initials}
               </AvatarFallback>
             </Avatar>
-            <span className="text-lg font-medium text-black">{brand.name}</span>
+            <span className="text-sm font-semibold text-gray-200 font-urbanist">{brand.name}</span>
           </div>
         ))}
       </Marquee>
