@@ -1,44 +1,115 @@
+"use client";
+
+import Link from "next/link";
+import { Leaf, Sparkles, Activity, ShieldCheck } from "lucide-react";
 import Header from "@/components/header";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white bg-cover bg-center relative px-6">
-      <div className="absolute inset-0 z-0">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage: "url('/images/3px-tile.png')",
-            backgroundRepeat: "repeat",
-            opacity: "0.2",
-          }}
-        ></div>
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(255,255,255,0) 30%, white 100%)",
-          }}
-        ></div>
-      </div>
+    <section className="min-h-screen flex flex-col justify-center bg-[#07090e] relative px-6 pt-24 overflow-hidden">
+      {/* Ambient glowing orb backdrops */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[100px] pointer-events-none z-0" />
+      <div className="absolute bottom-10 left-10 w-[300px] h-[300px] rounded-full bg-teal-500/5 blur-[80px] pointer-events-none z-0" />
+      
+      {/* Visual background grid pattern */}
+      <div 
+        className="absolute inset-0 z-0 opacity-10"
+        style={{
+          backgroundImage: "radial-gradient(#10b981 1px, transparent 1.5px)",
+          backgroundSize: "24px 24px"
+        }}
+      />
 
-      <div
-        className="absolute inset-0 z-10 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/chloromap.png')" }}
-      ></div>
+      <Header />
 
-      <div className="absolute top-0 left-0 right-0 z-20">
-        <Header />
-      </div>
+      <div className="container mx-auto max-w-6xl relative z-10 flex flex-col items-center text-center mt-12 mb-16">
+        
+        {/* Floating SaaS Badge */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-8"
+        >
+          <Sparkles size={13} className="animate-pulse text-teal-400" />
+          The Future of Precision Agriculture
+        </motion.div>
 
-      {/* Text content */}
-      <div className="text-center max-w-6xl relative z-30">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-700">
-          Map your plant's <br />
-          health in{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 via-purple-500 via-red-500 to-pink-500 drop-shadow-lg">
-            color!
+        {/* Catchy Main Typography */}
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-urbanist leading-[1.05] tracking-tight text-white mb-6"
+        >
+          Precision Leaf Diagnostics <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-200">
+            Fused with Multimodal AI.
           </span>
-        </h1>
+        </motion.h1>
+
+        {/* Sub-text Context */}
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed mb-12 font-urbanist"
+        >
+          Diagnose leaf stress patterns, monitor chlorophyll density, and generate 
+          precision caresheets instantly using advanced computer vision and specialized AI.
+        </motion.p>
+
+        {/* Action CTAs */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center gap-5 justify-center w-full sm:w-auto mb-20"
+        >
+          <Link
+            href="/console"
+            className="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 rounded-2xl shadow-xl shadow-emerald-500/20 hover:shadow-emerald-500/35 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+          >
+            <Activity size={18} />
+            Start Leaf Diagnosis
+          </Link>
+          
+          <Link
+            href="#features"
+            className="w-full sm:w-auto px-8 py-4 text-base font-bold text-gray-300 hover:text-white glass-panel hover:bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+          >
+            Explore Platform
+          </Link>
+        </motion.div>
+
+        {/* Sleek Engineering Metrics */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-4xl border border-white/5 bg-gray-950/40 backdrop-blur-md p-6 rounded-3xl"
+        >
+          {[
+            { label: "Spectral Channels", value: "3 (H, S, V)", suffix: "OpenCV Segmenter" },
+            { label: "Multimodal Model", value: "Gemini 1.5", suffix: "Google Flash Payload" },
+            { label: "Pipeline Latency", value: "< 2.5s", suffix: "Foliar Sweep HUD" },
+            { label: "Client-Side Export", value: "jsPDF Core", suffix: "Certificate Engine" }
+          ].map((stat, i) => (
+            <div key={i} className="text-center flex flex-col justify-center px-4 py-2 border-r last:border-0 border-white/5">
+              <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-300 font-mono">
+                {stat.value}
+              </span>
+              <span className="text-xs font-bold text-emerald-400 mt-1 uppercase tracking-wider">
+                {stat.label}
+              </span>
+              <span className="text-[10px] text-gray-500 mt-0.5 font-mono">
+                {stat.suffix}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   );
