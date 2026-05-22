@@ -67,7 +67,7 @@ def get_plant_summary(hsv_data, image_path=None, species="Generic Plant"):
         return get_mock_summary(hsv_data, species)
 
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.0-flash-exp")
         
         prompt = (
             "You are VerdantAI, an expert botanist and leaf-health diagnostician.\n"

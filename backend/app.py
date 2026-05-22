@@ -11,7 +11,10 @@ logging.basicConfig(
 logger = logging.getLogger("verdantai")
 
 app = Flask(__name__)
-CORS(app)
+
+# Restrict CORS to the deployed frontend URL; falls back to localhost for local dev
+allowed_origins = os.getenv("FRONTEND_URL", "http://localhost:3000")
+CORS(app, origins=[allowed_origins])
 
 # Setup directories dynamically
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

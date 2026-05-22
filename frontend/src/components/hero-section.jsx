@@ -91,7 +91,7 @@ export default function HeroSection() {
         >
           {[
             { label: "Spectral Channels", value: "3 (H, S, V)", suffix: "OpenCV" },
-            { label: "AI Model", value: "Gemini 1.5", suffix: "Google" },
+            { label: "AI Model", value: "Gemini 2.0", suffix: "Google" },
             { label: "Pipeline Latency", value: "< 2.5s", suffix: "end-to-end" },
             { label: "PDF Export", value: "jsPDF", suffix: "client-side" }
           ].map((stat, i) => (
