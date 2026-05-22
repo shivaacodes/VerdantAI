@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import UploadCard from "@/components/upload-card";
 import AnalysisCard from "@/components/analysis-card";
 import SummaryCard from "@/components/summary-card";
-import { History, Trash, Database, Leaf, ShieldAlert, Sparkles } from "lucide-react";
+import { History, Trash, Database } from "lucide-react";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 

@@ -39,8 +39,7 @@ def process_image(filepath, species="Generic Plant"):
                 logger.error(f"PIL fallback also failed: {str(pil_err)}")
                 return {"error": "Failed to load uploaded image. Ensure it is a valid JPG/PNG/JPEG."}
 
-        # 1. OPTIMIZATION: Auto-Scale high-resolution images to max 1024px width/height
-        # This speeds up Gemini Vision uploads by up to 90%, reduces API network latency, and saves disk space!
+        # Downscale large images to max 1024px to reduce Gemini payload size
         h_orig, w_orig = img.shape[:2]
         max_dim = 1024
         if h_orig > max_dim or w_orig > max_dim:
@@ -51,15 +50,12 @@ def process_image(filepath, species="Generic Plant"):
             new_w = int(w_orig * scale)
             new_h = int(h_orig * scale)
             img = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_AREA)
-            logger.info(f"Auto-scaled high-res image from {w_orig}x{h_orig} to {new_w}x{new_h} for high-speed processing")
+            logger.info(f"Resized image from {w_orig}x{h_orig} to {new_w}x{new_h}")
 
         # Convert to HSV color space using OpenCV
         hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-        # 2. FEATURE: Dynamic Foliar Boundary & Chlorophyll Target Contour Segmentation
-        # Instead of saving raw neon-pink HSV arrays (which look like corrupted colors),
-        # we isolate green/yellow foliar pixels, trace the leaf contour, and overlay a glowing neon-green border
-        # alongside diagnostic watermarks on the output image to show real computer vision rigor!
+        # Segment green/yellow leaf pixels from background
         lower_green = np.array([25, 30, 30])
         upper_green = np.array([95, 255, 255])
         green_mask = cv2.inRange(hsv_img, lower_green, upper_green)
@@ -88,8 +84,7 @@ def process_image(filepath, species="Generic Plant"):
         height, width, _ = hsv_img.shape
         h, s, v = cv2.split(hsv_img)
         
-        # If we have a green mask, let's calculate averages only on the actual leaf mask pixels for extreme scientific accuracy!
-        # If no green pixels are detected, fallback to the entire image average.
+        # Calculate HSV averages inside the leaf mask only; fall back to full image if no green detected
         if cv2.countNonZero(green_mask) > 0:
             avg_hue = int(cv2.mean(h, mask=green_mask)[0])
             avg_sat = int(cv2.mean(s, mask=green_mask)[0])
