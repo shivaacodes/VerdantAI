@@ -141,18 +141,6 @@ export default function AnalyzeSection() {
       <div className="absolute bottom-10 right-10 w-[350px] h-[350px] rounded-full bg-teal-500/5 blur-[90px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
-        <div className="text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-3 py-1.5 rounded-full">
-            INTELLIGENT CONSOLE
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-black font-urbanist text-white mt-6 mb-4">
-            Diagnostic Console
-          </h2>
-          <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto">
-            Select a species, upload a leaf photo, and run the analysis pipeline.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Scan history sidebar */}

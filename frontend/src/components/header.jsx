@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Leaf, ShieldCheck, ArrowLeft } from "lucide-react";
+import { Menu, X, Leaf, ArrowLeft } from "lucide-react";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -53,9 +53,7 @@ const Header = () => {
         >
           Verdant<span className="text-white font-medium">AI</span>
         </Link>
-        <span className="hidden sm:inline-flex items-center gap-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold uppercase px-2 py-0.5 rounded-full tracking-wider">
-          <ShieldCheck size={11} /> SaaS Demo
-        </span>
+
       </div>
 
       {/* Desktop Navigation */}
