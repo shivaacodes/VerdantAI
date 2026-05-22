@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { UploadCloud, Trash2, RefreshCw, Play, Sparkles } from "lucide-react";
+import { UploadCloud, Trash2, RefreshCw, Play, Cpu } from "lucide-react";
 
 export default function UploadCard({
   selectedImage,
@@ -32,7 +32,7 @@ export default function UploadCard({
         <div className="flex items-center justify-between border-b border-white/5 pb-3">
           <div className="flex items-center gap-2">
             <span className="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-              <Sparkles size={16} />
+              <Cpu size={16} />
             </span>
             <div>
               <h3 className="text-sm font-bold text-gray-200 uppercase tracking-wider">

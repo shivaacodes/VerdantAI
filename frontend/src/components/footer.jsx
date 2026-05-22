@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
+import { Leaf } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,14 +14,14 @@ export default function Footer() {
           <div className="md:col-span-7 space-y-4">
             <div className="flex items-center gap-2">
               <span className="p-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-                <Sparkles size={16} />
+                <Leaf size={16} />
               </span>
               <span className="text-xl font-black font-urbanist text-white tracking-tight">
                 Verdant<span className="text-emerald-400">AI</span>
               </span>
             </div>
             <p className="text-xs text-gray-500 max-w-md leading-relaxed">
-              A plant health diagnostic tool built with OpenCV and Gemini 1.5 — combining computer vision and AI to generate species-specific care plans.
+              A plant health diagnostic tool built with OpenCV and Gemini 2.0, combining computer vision and AI to generate species-specific care plans.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
             </span>
           </div>
           <div>
-            © {new Date().getFullYear()} VerdantAI — Shiva Sajay
+            © {new Date().getFullYear()} VerdantAI by Shiva Sajay
           </div>
         </div>
       </div>

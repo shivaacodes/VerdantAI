@@ -34,7 +34,7 @@ export default function FeatureSection() {
     {
       id: 1,
       title: "1. Upload",
-      desc: "Drop a high-res leaf photo. The backend preprocesses it — downscaling for performance and converting it to HSV color space.",
+      desc: "Drop a high-res leaf photo. The backend preprocesses it, downscaling for performance and converting it to HSV color space.",
       icon: Camera,
       badge: "OpenCV"
     },
