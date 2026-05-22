@@ -21,7 +21,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-gray-500 max-w-md leading-relaxed">
-              VerdantAI is an advanced foliar diagnostic platform powered by OpenCV spectral segmentation and Gemini Multimodal LLM analysis. Specially built as a recruiter-grade SaaS showcase.
+              A plant health diagnostic tool built with OpenCV and Gemini 1.5 — combining computer vision and AI to generate species-specific care plans.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
             </span>
           </div>
           <div>
-            © {new Date().getFullYear()} VerdantAI. Specially built for recruiter assessment review.
+            © {new Date().getFullYear()} VerdantAI — Shiva Sajay
           </div>
         </div>
       </div>

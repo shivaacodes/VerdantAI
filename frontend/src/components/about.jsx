@@ -13,12 +13,10 @@ export default function About() {
       </span>
 
       <h2 className="text-4xl sm:text-5xl font-black text-white font-urbanist mb-6">
-        Intelligent Plant Care, Made Simple
+        Built to understand plants, not just photograph them.
       </h2>
       <p className="mt-2 text-base sm:text-lg text-gray-400 max-w-xl leading-relaxed font-urbanist">
-        We bridge precision agricultural computer vision and modern generative AI models. 
-        Our goal is to make chlorophyll health mapping and leaf foliar stress diagnosis 
-        accessible, instant, and scientifically reproducible for everyone.
+        VerdantAI started as a side project to see how far OpenCV and a multimodal model could go in diagnosing plant health from just a photo. It combines pixel-level color analysis with AI-generated care plans, tailored by species.
       </p>
       
       <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">

@@ -33,24 +33,24 @@ export default function FeatureSection() {
   const features = [
     {
       id: 1,
-      title: "1. Capture & Upload",
-      desc: "Upload or drag in a high-res photo of any leaf. Our upload portal isolates boundaries and preprocesses color profiles instantly.",
+      title: "1. Upload",
+      desc: "Drop a high-res leaf photo. The backend preprocesses it — downscaling for performance and converting it to HSV color space.",
       icon: Camera,
-      badge: "OpenCV BOUNDS"
+      badge: "OpenCV"
     },
     {
       id: 2,
-      title: "2. Multimodal Fusion Scan",
-      desc: "Our OpenCV core mapping measures Hue-Saturation-Value vectors while Google Gemini Vision scans qualitative leaf blemishes.",
+      title: "2. Analyse",
+      desc: "OpenCV segments the leaf from the background and extracts Hue, Saturation, and Value metrics. Gemini then reads the image alongside species context to identify stress patterns.",
       icon: Cpu,
-      badge: "GEMINI 1.5 PRO"
+      badge: "Gemini 1.5"
     },
     {
       id: 3,
-      title: "3. Actionable Caresheets",
-      desc: "Receive structured foliar insights, leaf hydration status, qualitative stress diagnosis, and a certificate-grade PDF report.",
+      title: "3. Care Plan",
+      desc: "You get a structured diagnosis, HSV gauges, and an exportable PDF certificate with care recommendations specific to your plant species.",
       icon: FileText,
-      badge: "PDF CERTIFICATE"
+      badge: "jsPDF"
     },
   ];
 
@@ -70,10 +70,10 @@ export default function FeatureSection() {
             SYSTEM PIPELINE
           </span>
           <h2 className="text-4xl sm:text-5xl font-black font-urbanist text-white mt-6 mb-4">
-            How VerdantAI Diagnoses Leaf Stress
+            How it works
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto font-medium">
-            Deploy scientific plant diagnostics in three automated phases.
+            Three steps from photo to diagnosis.
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export default function FeatureSection() {
               {/* Status Badge */}
               <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-emerald-400">
                 <CheckCircle2 size={14} className="text-emerald-500" />
-                <span>Fully Automated Phase</span>
+                <span>Automated</span>
               </div>
             </div>
           ))}

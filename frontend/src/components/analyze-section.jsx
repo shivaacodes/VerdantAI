@@ -61,7 +61,7 @@ export default function AnalyzeSection() {
     setIsScanning(true);
     setScanProgress(0);
 
-    // Timeline Sweep Simulation for Recruiter Wow Factor
+    // Scan step simulation to give users visual feedback during API call
     const runSimulationStep = (text, progress, delay) => {
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -146,16 +146,16 @@ export default function AnalyzeSection() {
             INTELLIGENT CONSOLE
           </span>
           <h2 className="text-4xl sm:text-5xl font-black font-urbanist text-white mt-6 mb-4">
-            Interactive Diagnostic Workspace
+            Diagnostic Console
           </h2>
           <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto">
-            Choose a species, drop a leaf photo, and initiate our real-time multimodal scanning diagnostic payload.
+            Select a species, upload a leaf photo, and run the analysis pipeline.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* LEFT COLUMN: Local Scan History Sidebar (Recruiter Wow Factor) */}
+          {/* Scan history sidebar */}
           <div className="lg:col-span-3 order-3 lg:order-1 glass-panel p-5 rounded-3xl h-[475px] flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between border-b border-white/5 pb-3.5 mb-4">
@@ -206,17 +206,15 @@ export default function AnalyzeSection() {
               </div>
             </div>
 
-            {/* Simulated Cloud Synced Indicator */}
-            <div className="border-t border-white/5 pt-3.5 flex items-center justify-between text-[10px] text-gray-500">
+            <div className="border-t border-white/5 pt-3.5 flex items-center text-[10px] text-gray-500">
               <span className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" />
-                Local Cache Synced
+                Saved locally
               </span>
-              <span>100% Secure</span>
             </div>
           </div>
 
-          {/* MIDDLE COLUMN: Upload Card Console */}
+          {/* Upload card */}
           <div className="lg:col-span-5 order-1 lg:order-2 h-[475px]">
             <UploadCard
               selectedImage={selectedImage}
@@ -232,7 +230,7 @@ export default function AnalyzeSection() {
             />
           </div>
 
-          {/* RIGHT COLUMN: Diagnostic Outcome HUD */}
+          {/* Diagnostics HUD */}
           <div className="lg:col-span-4 order-2 lg:order-3 h-[475px]">
             <AnalysisCard result={result} isScanning={isScanning} />
           </div>
